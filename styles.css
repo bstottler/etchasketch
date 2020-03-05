@@ -1,0 +1,32 @@
+:root{
+    --colNum: 16;
+}
+
+.gridCell {
+    height: auto;
+    width: auto;
+    background-color: gainsboro;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#gridContainer {
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(var(--colNum), 1fr);
+    border: 2px solid black;
+}
+
+.draw {
+    background-color: black;
+}
+
+button {
+    margin: auto;
+}
