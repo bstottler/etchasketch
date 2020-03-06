@@ -33,6 +33,29 @@ cells.forEach((div) => {
 });
 }
 
+//adds rainbow mouseover effect
+function mouseOverRainbow() {
+    let cells = document.querySelectorAll('div.gridCell');
+    cells.forEach((div) => { 
+        div.addEventListener('mouseover', (e) => {
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            div.style.backgroundColor = '#' + randomColor;
+        });
+    });
+}
+
+//adds grey to black mouseover effect
+function mouseOverBlack() {
+    let cells = document.querySelectorAll('div.gridCell');
+    cells.forEach((div) => { 
+        let colorFade = 100;
+        div.addEventListener('mouseover', (e) => {
+            colorFade -= 10;
+            div.style.backgroundColor = 'hsl(0, 0%, ' + colorFade + '%)';
+        });
+    });
+}
+
 //adds ability to reset grid size with button.
 function gridPrompt() {
          gridWidth = prompt('Please define drawing board dimensions between 2 and 150:', '16');
@@ -50,5 +73,16 @@ clearButton.addEventListener('click', (e) => {
 deleteGrid(gridSize);
 gridPrompt();
 mouseOver();
- });
+});
 
+//changes to rainbow mouseover upon click
+let rainbowButton = document.querySelector('#rainbowDraw');
+rainbowButton.addEventListener('click', (e) => {
+mouseOverRainbow();
+});
+
+//changes to greyscale fade upon click
+let greyscaleButton = document.querySelector('#greyToBlack');
+greyscaleButton.addEventListener('click', (e) => {
+mouseOverBlack();
+});

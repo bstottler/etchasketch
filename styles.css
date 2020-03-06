@@ -1,17 +1,31 @@
 :root{
     --colNum: 16;
+    background-color: hsl(0, 0%, 86%)
 }
 
 .gridCell {
     height: auto;
     width: auto;
-    background-color: gainsboro;
+    background-color: hsl(0, 0%, 100%);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    Padding: 1px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
-    display: flex;
-    justify-content: center;
+    display: inline-block;
     padding: 10px;
+    margin: 10px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;   
 }
 
 #gridContainer {
@@ -21,12 +35,9 @@ button {
     display: grid;
     grid-template-columns: repeat(var(--colNum), 1fr);
     border: 2px solid black;
+    margin-top: 10px;
 }
 
 .draw {
     background-color: black;
-}
-
-button {
-    margin: auto;
 }
